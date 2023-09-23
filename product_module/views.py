@@ -1,14 +1,16 @@
 from django.db.models import Count
 from django.http import HttpRequest
+from site_module.models import SiteBanner
+from django.views.generic.base import View
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
-from django.views.generic.base import View
-
-from site_module.models import SiteBanner
-from .models import Product, ProductCategory, ProductBrand
+from product_module.models import Product, ProductCategory, ProductBrand
 
 
 # Create your views here.
+
+
+
 
 
 # def product_list(request):
@@ -34,7 +36,7 @@ class ProductListView(ListView):
     template_name = 'product_module/product_list.html'
     model = Product
     context_object_name = 'products'
-    ordering = ['-price'] #به ترتیب قرار گیری فیلدها عملیات ordering را انجام میدهد
+    ordering = ['-price']  # به ترتیب قرار گیری فیلدها عملیات ordering را انجام میدهد
     paginate_by = 20
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -48,7 +50,9 @@ class ProductListView(ListView):
         context['db_max_price'] = db_max_price
         context['start_price'] = self.request.GET.get('start_price') or 0
         context['end_price'] = self.request.GET.get('end_price') or db_max_price
-        context['banners'] = SiteBanner.objects.filter(is_active=True, position__iexact=SiteBanner.SiteBannerPositions.product_list)
+        context['banners'] = SiteBanner.objects.filter(is_active=True,
+                                                       position__iexact=SiteBanner.SiteBannerPositions.product_list)
+
         return context
 
     def get_queryset(self):
@@ -71,11 +75,12 @@ class ProductListView(ListView):
             query = query.filter(category__url_title__iexact=category_name, is_active=True)
         return query
 
-    #اعمال یک کوئری برای این listView
+    # اعمال یک کوئری برای این listView
     # def get_queryset(self):
     #     base_query = super(ProductListView, self).get_queryset()
     #     data = base_query.filter(is_active=True)
     #     return data
+
 
 # def product_detail(request, slug):
 #     # try:
@@ -116,8 +121,10 @@ class ProductDetailView(DetailView):
         request = self.request
         favorite_product_id = request.session.get("product_favorites")
         context['is_favorite'] = favorite_product_id == str(loaded_prodct)
-        context['banners'] = SiteBanner.objects.filter(is_active=True, position__iexact=SiteBanner.SiteBannerPositions.product_detail)
+        context['banners'] = SiteBanner.objects.filter(is_active=True,
+                                                       position__iexact=SiteBanner.SiteBannerPositions.product_detail)
         return context
+
 
 class AddProductFavorite(View):
     def post(self, request):
@@ -125,7 +132,6 @@ class AddProductFavorite(View):
         product = Product.objects.get(pk=product_id)
         product.session['product_favorites'] = product_id
         return redirect(product.get_absolute_url())
-
 
 
 def product_categories_component(request: HttpRequest):
