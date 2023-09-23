@@ -4,8 +4,7 @@ from site_module.models import SiteBanner
 from django.views.generic.base import View
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
-from product_module.models import Product, ProductCategory, ProductBrand
-
+from product_module.models import Product, ProductCategory, ProductBrand, ProductVisit
 
 # Create your views here.
 
@@ -31,6 +30,8 @@ from product_module.models import Product, ProductCategory, ProductBrand
 #         context = super(ProductListView, self).get_context_data()
 #         context['products'] = products
 #         return context
+from utils.http_service import get_client_id
+
 
 class ProductListView(ListView):
     template_name = 'product_module/product_list.html'
@@ -123,6 +124,17 @@ class ProductDetailView(DetailView):
         context['is_favorite'] = favorite_product_id == str(loaded_prodct)
         context['banners'] = SiteBanner.objects.filter(is_active=True,
                                                        position__iexact=SiteBanner.SiteBannerPositions.product_detail)
+
+        user_ip = get_client_id(request=self.request)
+        user_id = None
+        if self.request.user.is_authenticated:
+            user_id = self.request.user.id
+
+        has_been_visited = ProductVisit.objects.filter(ip__iexact=user_ip, product_id=loaded_prodct.id).exists()
+        if not has_been_visited:
+            new_visit = ProductVisit(ip=user_ip, user_id=user_id, product_id=loaded_prodct.id)
+            new_visit.save()
+
         return context
 
 
