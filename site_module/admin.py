@@ -15,3 +15,9 @@ admin.site.register(models.SiteSetting)
 admin.site.register(models.FooterLinkBox)
 admin.site.register(models.FooterLink, FooterLinkAdmin)
 admin.site.register(models.Slider, SliderAdmin)
+
+
+@admin.register(models.SiteBanner)
+class SiteBannerAdmin(admin.ModelAdmin):
+    list_display = ['title', 'url', 'position', 'order']
+    list_editable = ['url', 'position', 'order']
