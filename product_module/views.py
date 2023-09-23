@@ -39,6 +39,10 @@ class ProductListView(ListView):
         query = super(ProductListView, self).get_queryset()
         category_name = self.kwargs.get('cat')
         brand_name = self.kwargs.get('brand')
+        request: HttpRequest = self.request
+        start_price = request.GET.get('start_price')
+        end_price = request.GET.get('end_price')
+
         if brand_name is not None:
             query = query.filter(brand__url_title__iexact=brand_name, is_active=True)
         if category_name is not None:
