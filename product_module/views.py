@@ -3,6 +3,8 @@ from django.http import HttpRequest
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import View
+
+from site_module.models import SiteBanner
 from .models import Product, ProductCategory, ProductBrand
 
 
@@ -46,6 +48,7 @@ class ProductListView(ListView):
         context['db_max_price'] = db_max_price
         context['start_price'] = self.request.GET.get('start_price') or 0
         context['end_price'] = self.request.GET.get('end_price') or db_max_price
+        context['banners'] = SiteBanner.objects.filter(is_active=True, position__iexact=SiteBanner.SiteBannerPositions.product_list)
         return context
 
     def get_queryset(self):
@@ -98,10 +101,23 @@ class ProductListView(ListView):
 #         return context
 
 
+# class ProductDetailView(DetailView):
+#     template_name = "product_module/product_detail.html"
+#     model = Product
+
+
 class ProductDetailView(DetailView):
-    template_name = "product_module/product_detail.html"
+    template_name = 'product_module/product_detail.html'
     model = Product
 
+    def get_context_data(self, **kwargs):
+        context = super(ProductDetailView, self).get_context_data()
+        loaded_prodct = self.object
+        request = self.request
+        favorite_product_id = request.session.get("product_favorites")
+        context['is_favorite'] = favorite_product_id == str(loaded_prodct)
+        context['banners'] = SiteBanner.objects.filter(is_active=True, position__iexact=SiteBanner.SiteBannerPositions.product_detail)
+        return context
 
 class AddProductFavorite(View):
     def post(self, request):
