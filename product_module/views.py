@@ -33,7 +33,7 @@ class ProductListView(ListView):
     model = Product
     context_object_name = 'products'
     ordering = ['-price'] #به ترتیب قرار گیری فیلدها عملیات ordering را انجام میدهد
-    paginate_by = 3
+    paginate_by = 20
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ProductListView, self).get_context_data()
