@@ -37,3 +37,8 @@ class ProductBrandAdmin(admin.ModelAdmin):
 admin.site.register(models.ProductCategory)
 admin.site.register(models.ProductTag)
 # admin.site.register(models.ProductBrand)
+
+
+@admin.register(models.ProductVisit)
+class ProductBrandAdmin(admin.ModelAdmin):
+    list_display = ['id', 'ip']

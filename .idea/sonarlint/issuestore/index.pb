@@ -261,8 +261,6 @@ G
 contact_module/admin.py,b\9\b92f656c35444c537c54c3504489931742427102
 J
 contact_module/__init__.py,6\9\69a1cff77b9545eb7c230eed07fd2e2cbb57192e
-H
-product_module/models.py,1\e\1efa14b72bd93e2dd43a8a3b47ddb098f49a8432
 G
 product_module/tests.py,8\9\89dab9b60baf10aa45a7271b63b5a33dbb6a89c9
 J
@@ -297,8 +295,6 @@ C
 static/js/custom.js,6\b\6b32a17df2c5218436f2fac859d5cbc24416ec95
 D
 home_module/admin.py,d\2\d20010f37acb2b52439cbce2351bda0e7bc4bf9e
-G
-product_module/admin.py,2\d\2d90b905037ce8973fe59b834e575c55f8212948
 Y
 )site_module/migrations/0006_sitebanner.py,b\8\b8eeb51f7748062f35a4ef0a7d16d755d6171b26
 _
