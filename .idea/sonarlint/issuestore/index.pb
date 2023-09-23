@@ -129,8 +129,6 @@ U
 %account_module/migrations/__init__.py,c\e\cee2334dfc622ac9c06840f9b7301ccc87531929
 Y
 )account_module/migrations/0001_initial.py,4\b\4b93a1c7a5aab10d8b1e63466181687e85c2b409
-p
-@article_module/templates/article_module/article_detail_page.html,8\4\845d40b3327bb83c038cd273eb77a7726b750d04
 v
 Farticle_module/migrations/0002_alter_articlecategory_title_and_more.py,5\1\51b1537690081088b6513f8a1b5f2155795a2bbc
 i

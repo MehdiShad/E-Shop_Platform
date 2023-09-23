@@ -1,4 +1,5 @@
 {% extends 'shared/_layout.html' %}
+{% load thumbnail %}
 {% block title %}فروشگاه شاد | صفحه اصلی{% endblock %}
 {% block content %}
 {#    <p>{{ data }} </p>#}
@@ -73,7 +74,10 @@
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="{{ product.image.url }}" alt="" />
+                                                    {% thumbnail product.image "268x250" quality=95 crop="center" as im %}
+                                                        <img src="{{ im.url }}">
+                                                    {% endthumbnail %}
+{#													<img src="{{ product.image.url }}" alt="" />#}
 													<h2>{{ product.price }}</h2>
 													<p>{{ product.title }}</p>
 													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>افزودن به سبـد خرید</a>
