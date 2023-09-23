@@ -68,6 +68,8 @@ class Slider(models.Model):
 #     ('product_list', 'صفحه لیست محصولات'),
 #     ('product_detail', 'صفحه جزئیات محصولات'),
 # ]
+
+
 class SiteBanner(models.Model):
     class SiteBannerPositions(models.TextChoices):
         product_list = 'product_list', 'صفحه لیست محصولات',
