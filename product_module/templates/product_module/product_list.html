@@ -15,7 +15,7 @@
 						<h2 class="title text-center">محصولات</h2>
 						{% for product in products %}
 						{% comment %}{% for product in object_list %}{% endcomment %}
-                            {% include 'product_module/includes/product_item_partial.html' with product=product %}
+                            {% include 'product_module/includes/product_item_partial.html' with product=product col_size=4 %}
 						{% endfor %}
                         <div class="clearfix"></div>
 						<ul class="pagination">

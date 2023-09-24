@@ -1,7 +1,7 @@
 from django.db.models import Count
 from django.shortcuts import render
 from utils.convertors import group_list
-from product_module.models import Product
+from product_module.models import Product, ProductCategory
 from django.views.generic.base import TemplateView
 from site_module.models import SiteSetting, FooterLinkBox, Slider
 
@@ -33,6 +33,19 @@ class HomeView(TemplateView):
 
         context['latest_products'] = group_list(custom_list=latest_products, size=4)
         context['most_visit_products'] = group_list(custom_list=most_visit_products, size=4)
+
+        categories = list(ProductCategory.objects.annotate(product_count=Count('product_categories')).filter(is_active=True, is_delete=False, product_count__gt=0))
+        categories_products = []
+        for category in categories:
+            item = {
+                'id': category.id,
+                'title': category.title,
+                'products': list(category.product_categories.all()[:4])
+            }
+            categories_products.append(item)
+
+        context['categories_products'] = categories_products
+
         return context
 
 

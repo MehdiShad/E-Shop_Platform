@@ -3,6 +3,7 @@ from jalali_date import date2jalali
 
 register = template.Library()
 
+
 @register.filter(name='cut')
 def cut(value, arg):
     """Removes all values of arg from the given string"""
@@ -13,6 +14,12 @@ def cut(value, arg):
 def show_jalali_date(value):
     return date2jalali(value)
 
+
 @register.filter(name='show_jalali_time')
 def show_jalali_time(value):
     return value.strftime('%H:%M')
+
+
+@register.filter(name='three_digits_currency')
+def three_digits_currency(value: int) -> str:
+    return '{:,}'.format(value)

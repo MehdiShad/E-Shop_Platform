@@ -17,8 +17,6 @@ L
 polls/migrations/__init__.py,7\d\7d6bbd8342d2d8cda1b8a3a3ab697022204ed303
 F
 utils/email_service.py,9\5\95636ac958c42c038f71f191eab89152c78aea6d
-Q
-!polls/templatetags/poll_extras.py,6\c\6cea695adde2c77846376266438164558a9c736c
 B
 config/settings.py,7\6\769aa6664d3e5c284cbfb95fd9848a351a2e4e2b
 >
@@ -155,8 +153,6 @@ h
 Pproduct_module/templates/product_module/components/product_brnads_component.html,a\b\ab8e312bf88d3f11dec5b3ea196221fa70f2eeab
 „
 Tarticle_module/templates/article_module/components/article_categories_component.html,c\3\c3f0c6f60dcdc30c5f834ca4f732a3f2701265ac
-z
-Jproduct_module/templates/product_module/includes/product_item_partial.html,7\9\7991718692c77199e594483d55936239e44b6c00
 ~
 Narticle_module/templates/article_module/includes/article_comments_partial.html,2\a\2a00d530599aed19b4e9303bbcffed741877ad04
 Y
@@ -299,3 +295,15 @@ Y
 )site_module/migrations/0006_sitebanner.py,b\8\b8eeb51f7748062f35a4ef0a7d16d755d6171b26
 _
 /site_module/migrations/0007_sitebanner_order.py,e\9\e987d92e2a4eb29dab189201b0888a90c7882eb3
+D
+site_module/admin.py,f\a\fafc5a82f082cfafc98451747ea370817f48de69
+k
+;product_module/templates/product_module/product_detail.html,1\8\186543d28dd45925bda36c4e03139b120f1809c1
+C
+utils/convertors.py,f\3\f32fc424b1395a776915cfbc550f1b45aeb223ba
+p
+@article_module/templates/article_module/article_detail_page.html,8\4\845d40b3327bb83c038cd273eb77a7726b750d04
+E
+site_module/models.py,9\d\9da649f73e29dfadb4b26e7e2cc5a1a7079746de
+^
+.product_module/migrations/0006_productvisit.py,4\d\4df93cb8fae529d67be87274ae323d910269c991
