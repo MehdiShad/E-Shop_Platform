@@ -17,8 +17,6 @@ L
 polls/migrations/__init__.py,7\d\7d6bbd8342d2d8cda1b8a3a3ab697022204ed303
 F
 utils/email_service.py,9\5\95636ac958c42c038f71f191eab89152c78aea6d
-B
-config/settings.py,7\6\769aa6664d3e5c284cbfb95fd9848a351a2e4e2b
 >
 config/asgi.py,5\9\597ed58946079f795070145abd2ba40aaf51a0ae
 >

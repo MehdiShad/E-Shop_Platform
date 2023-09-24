@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'account_module',
     'site_module',
     'article_module',
+    'order_module',
     'polls',
     'user_panel_module',
     # external apps
