@@ -9,6 +9,6 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ['id', 'user']
 
 
-@admin.register(models.OrderDetial)
+@admin.register(models.OrderDetail)
 class OrderDetail(admin.ModelAdmin):
     list_display = ['id', 'order', 'product']

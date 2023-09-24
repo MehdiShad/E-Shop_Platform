@@ -50,3 +50,10 @@ function showLargeImage(imageSrc) {
     $('#main_image').attr('src', imageSrc)
     $('#show_large_image_modal').attr('href', imageSrc)
 }
+
+function addProductToOrder(productId) {
+    const productCount = $('#product_count').val()
+    $.get('/order/add-to-order?product_id=' + productId + '&count=' + productCount).then(res => {
+        console.log(res)
+    })
+}

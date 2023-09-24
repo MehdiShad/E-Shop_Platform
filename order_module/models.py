@@ -17,7 +17,7 @@ class Order(models.Model):
         verbose_name_plural = 'سبدهای خرید کاربران'
 
 
-class OrderDetial(models.Model):
+class OrderDetail(models.Model):
     order = models.ForeignKey(Order, on_delete=models.PROTECT, verbose_name='سبد خرید')
     product = models.ForeignKey(Product, on_delete=models.PROTECT, verbose_name='محصول')
     final_price = models.IntegerField(null=True, blank=True, verbose_name='فیمت نهایی تکی محصول')

@@ -21,8 +21,6 @@ F
 config/asgi.py,5\9\597ed58946079f795070145abd2ba40aaf51a0ae
 >
 config/wsgi.py,7\a\7a4aaa54a3efb112f8e2592ed1507e33ab6a7b8c
->
-config/urls.py,4\5\45b243d494ecd78f07818174452843086c64845d
 O
 static/js/jquery.prettyPhoto.js,c\e\ce1fbd7500b228d441f096bc188bd84b4871fcb5
 P

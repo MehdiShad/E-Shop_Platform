@@ -71,8 +71,8 @@
 									</span>
 									<span>
 										<label>تعداد :</label>
-										<input type="text" value="3" class="search_box">
-										<button type="button" class="btn btn-fefault cart">
+										<input type="number" min="1" id="product_count" value="1" class="search_box">
+										<button onclick="addProductToOrder({{ product.id }})" type="button" class="btn btn-fefault cart">
 											<i class="fa fa-shopping-cart"></i>
 											افـزودن به سبـد خریـد
 										</button>
