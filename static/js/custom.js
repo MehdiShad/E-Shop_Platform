@@ -30,7 +30,7 @@ function fillParentId(parentId) {
     document.getElementById('comment_form').scrollIntoView({behavior: "smooth"})
 }
 
-function filterProducts(){
+function filterProducts() {
     // debugger;
     const filterPrice = $('#sl2').val()
     const start_price = filterPrice.split(',')[0];
@@ -55,5 +55,39 @@ function addProductToOrder(productId) {
     const productCount = $('#product_count').val()
     $.get('/order/add-to-order?product_id=' + productId + '&count=' + productCount).then(res => {
         console.log(res)
+        Swal.fire({
+            title: 'اعلان',
+            text: res.text,
+            icon: res.icon,
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            // cancelButtonColor: '#d33',
+            confirmButtonText: res.confirm_button_text
+        }).then((result) => {
+            if (result.isConfirmed && res.status === "not_auth") {
+                window.location.href = '/login';
+            }
+        })
+        // if (res.status === 'success') {
+        //     Swal.fire({
+        //         title: 'اعلان',
+        //         text: "محصول مورد نظر با موفقیت به سبد خرید شما اضافه شد.",
+        //         icon: 'success',
+        //         showCancelButton: false,
+        //         confirmButtonColor: '#3085d6',
+        //         // cancelButtonColor: '#d33',
+        //         confirmButtonText: 'باشه ممنون'
+        //     });
+        // } else if (res.status == 'not_found'){
+        //     Swal.fire({
+        //         title: 'اعلان',
+        //         text: "محصول مورد نظر یافت نشد.",
+        //         icon: 'error',
+        //         showCancelButton: false,
+        //         confirmButtonColor: '#3085d6',
+        //         // cancelButtonColor: '#d33',
+        //         confirmButtonText: 'باشه ممنون'
+        //     });
+        // }
     })
 }
