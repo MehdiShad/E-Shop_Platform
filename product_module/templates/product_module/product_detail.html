@@ -2,6 +2,15 @@
 {% load render_partial %}
 {% load poll_extras %}
 {% block title %}{{product.title}}{% endblock %}
+
+{% block header_refrences %}
+	<link href="/static/lib/image-lightbox/css/lightbox.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block footer_refrences %}
+	<script src="/static/lib/image-lightbox/js/lightbox.min.js"></script>
+	<script src="/static/lib/image-lightbox/js/lightbox-plus-jquery.min.js"></script>
+{% endblock %}
 {% block content %}
 <section>
 		<div class="container">
@@ -13,11 +22,15 @@
 							<div class="view-product">
 								{% comment %}<img src="/static/images/product-details/1.jpg" alt="">{% endcomment %}
 								{% if product.image %}
-                                    <img src="{{ product.image.url }}" alt="">
+                                    <img src="{{ product.image.url }}" alt="" id="main_image">
                                 {% else %}
-                                    <img src="/static/images/product-details/1.jpg" alt="">
+                                    <img src="/static/images/product-details/1.jpg" alt="" id="main_image">
 								{% endif %}
-                                <h3>بزرگنمایـی</h3>
+                                <h3>
+                                    <a style="color:white" id="show_large_image_modal" href="{{ product.image.url }}" data-lightbox="product-image">
+                                        بزرگنمایـی
+                                    </a>
+                                </h3>
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
 
@@ -26,13 +39,12 @@
 										{% for group in product_galleries_group %}
                                             <div class="item {% if forloop.first %} active {% endif %}">
                                               {% for gallery in group %}
-                                                  <a href="">
+                                                  <a onclick="showLargeImage('{{ gallery.image.url }}')">
                                                       <img src="{{ gallery.image.url }}" width="75" height="75" alt="">
                                                   </a>
                                               {% endfor %}
-
                                             </div>
-										{% endfor %}
+										{% endfor %}8
 									</div>
 
 								  <!-- Controls -->

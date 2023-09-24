@@ -8,6 +8,7 @@
     <meta name="author" content="">
     <title>{% block title %}صفحه اصلی | فروشگاه کارزیبا{% endblock %}</title>
     {% include 'shared/header_refrences.html' %}
+    {% block header_refrences %} {% endblock %}
 </head><!--/head-->
 <body>
     {% render_partial 'home_module.views.site_header_component' %}
@@ -17,5 +18,6 @@
     {% render_partial 'home_module.views.site_footer_component' %}
 
     {% include 'shared/footer_refrences.html' %}
+    {% block footer_refrences %} {% endblock %}
 </body>
 </html>

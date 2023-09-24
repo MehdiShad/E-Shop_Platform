@@ -61,8 +61,6 @@ T
 $static/fonts/fontawesome-webfont.svg,6\2\625e380068cb2039921b3603cafd30423e5f6fca
 G
 static/fonts/BYekan.svg,d\f\df0c7218d4d58c5d6d70c2600283fcc8cebe5e1b
-V
-&templates/shared/footer_refrences.html,7\6\761af9f0eb1b04983ed1f86ef27b8de5d6017d4f
 [
 +templates/shared/site_header_component.html,d\d\dd2c3efee56d64f64ff4846bf82da2464d40ede3
 M
@@ -77,10 +75,6 @@ c
 3home_module/templates/home_module/contact_page.html,e\b\eb7ff3ef1c8a2b6fe47c37dad0519db331933acd
 a
 1home_module/templates/home_module/about_page.html,f\5\f5982c002384bc6fa477c9a9d502cc207d3f318c
-M
-templates/shared/_layout.html,a\a\aa8416d81a2e7ab8c3856310c9cfc6c72d01ce28
-V
-&templates/shared/header_refrences.html,6\b\6b52cce0bddd1f488baa9c569d3438b34f3bfb54
 [
 +templates/shared/site_footer_component.html,8\b\8b2934a4a9c580ec6e893725d87da7c7f9a1bc4e
 R
@@ -287,8 +281,6 @@ K
 user_panel_module/models.py,5\b\5be02278a51246da6507559376632ee4424b60a8
 E
 static/css/custom.css,0\d\0d25b77cab8c0daf281f3949aaf2d595654b92eb
-C
-static/js/custom.js,6\b\6b32a17df2c5218436f2fac859d5cbc24416ec95
 D
 home_module/admin.py,d\2\d20010f37acb2b52439cbce2351bda0e7bc4bf9e
 Y
@@ -301,7 +293,15 @@ C
 utils/convertors.py,f\3\f32fc424b1395a776915cfbc550f1b45aeb223ba
 p
 @article_module/templates/article_module/article_detail_page.html,8\4\845d40b3327bb83c038cd273eb77a7726b750d04
-E
-site_module/models.py,9\d\9da649f73e29dfadb4b26e7e2cc5a1a7079746de
 ^
 .product_module/migrations/0006_productvisit.py,4\d\4df93cb8fae529d67be87274ae323d910269c991
+E
+utils/http_service.py,1\d\1d649c737d53856a50ad0e56273c96adf6fadd56
+z
+Jproduct_module/templates/product_module/includes/product_item_partial.html,7\9\7991718692c77199e594483d55936239e44b6c00
+i
+9product_module/templates/product_module/product_list.html,0\7\073272cf6e4f398b952421fe3a8e770e21242f04
+Q
+!polls/templatetags/poll_extras.py,6\c\6cea695adde2c77846376266438164558a9c736c
+`
+0product_module/migrations/0007_productgallery.py,5\6\56783e9a4c3ae5b948810ceaaace1d7683b5f890

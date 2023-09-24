@@ -125,7 +125,10 @@ class ProductDetailView(DetailView):
         context['banners'] = SiteBanner.objects.filter(is_active=True,
                                                        position__iexact=SiteBanner.SiteBannerPositions.product_detail)
 
-        context['product_galleries_group'] = group_list(custom_list=list(ProductGallery.objects.filter(product_id=loaded_prodct.id)), size=3)
+        galleries = list(ProductGallery.objects.filter(product_id=loaded_prodct.id))
+        galleries.insert(0, loaded_prodct)
+
+        context['product_galleries_group'] = group_list(custom_list=galleries, size=3)
 
         user_ip = get_client_id(request=self.request)
         user_id = None
