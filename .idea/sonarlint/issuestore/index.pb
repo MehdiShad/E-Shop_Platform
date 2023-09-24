@@ -264,11 +264,7 @@ F
 F
 product_module/apps.py,8\2\82dac3a78381fccfb17f08df9bdce12d2e1b6deb
 I
-user_panel_module/urls.py,5\1\51f3219503e33bd72eb6cf5139abc4f7e2750ba7
-I
 user_panel_module/apps.py,4\b\4b6f25f81f055f30402af478087f9f7f09480619
-J
-user_panel_module/views.py,4\4\4415fd54e8bd5c92f4d750c747ce92c2f1560b5d
 J
 user_panel_module/forms.py,d\a\dac71563c57193121664daa163fa60a6d3a92e7e
 J
@@ -291,7 +287,5 @@ p
 .product_module/migrations/0006_productvisit.py,4\d\4df93cb8fae529d67be87274ae323d910269c991
 E
 utils/http_service.py,1\d\1d649c737d53856a50ad0e56273c96adf6fadd56
-Q
-!polls/templatetags/poll_extras.py,6\c\6cea695adde2c77846376266438164558a9c736c
 `
 0product_module/migrations/0007_productgallery.py,5\6\56783e9a4c3ae5b948810ceaaace1d7683b5f890

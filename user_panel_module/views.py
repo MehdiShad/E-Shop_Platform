@@ -1,13 +1,12 @@
-from django.http import HttpRequest
-from django.shortcuts import render, redirect
-from django.urls import reverse
-
 from django.views import View
-from django.views.generic import TemplateView
-
-from account_module.models import User
-from .forms import EditProfileModelForm, ChangePasswordForm
+from django.urls import reverse
+from django.http import HttpRequest
 from django.contrib.auth import logout
+from account_module.models import User
+from django.views.generic import TemplateView
+from django.shortcuts import render, redirect
+from order_module.models import Order, OrderDetail
+from .forms import EditProfileModelForm, ChangePasswordForm
 
 
 # Create your views here.
@@ -70,3 +69,16 @@ class ChangePasswordPage(View):
 def user_panel_menu_component(request: HttpRequest):
     context = {}
     return render(request, 'user_panel_module/components/user_panel_menu_component.html', context=context)
+
+
+def user_basket(request: HttpRequest):
+    current_order, created = Order.objects.prefetch_related('orderdetail_set').get_or_create(is_paid=False, user_id=request.user.id)
+    total_cart_amount = 0
+    for order_detail in current_order.orderdetail_set.all():
+        total_cart_amount += order_detail.count * order_detail.product.price
+
+    context = {
+        'order': current_order,
+        'total_cart_amount': total_cart_amount,
+    }
+    return render(request, 'user_panel_module/user_basket.html', context=context)

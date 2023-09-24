@@ -23,3 +23,8 @@ def show_jalali_time(value):
 @register.filter(name='three_digits_currency')
 def three_digits_currency(value: int) -> str:
     return '{:,}'.format(value)
+
+
+@register.simple_tag
+def multiply(quantity, price, *args, **kwargs):
+    return three_digits_currency(quantity * price)
