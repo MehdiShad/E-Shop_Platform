@@ -129,6 +129,8 @@ class ProductDetailView(DetailView):
         galleries.insert(0, loaded_prodct)
 
         context['product_galleries_group'] = group_list(custom_list=galleries, size=3)
+        related_products = group_list(custom_list=list(Product.objects.filter(brand_id=loaded_prodct.brand_id).exclude(pk=loaded_prodct.id)[:12]), size=3)
+        context['related_products'] = related_products
 
         user_ip = get_client_id(request=self.request)
         user_id = None
