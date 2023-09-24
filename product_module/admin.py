@@ -1,5 +1,7 @@
 from django.contrib import admin
 from . import models
+
+
 # Register your models here.
 
 
@@ -31,14 +33,22 @@ class ProductBrandAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'url_title']
     list_editable = ['title', 'url_title']
 
+
 # @admin.register(models.ProductCategory)
 # class ProductCategoryAdmin(admin.ModelAdmin):
 #     pass
 admin.site.register(models.ProductCategory)
 admin.site.register(models.ProductTag)
+
+
 # admin.site.register(models.ProductBrand)
 
 
 @admin.register(models.ProductVisit)
 class ProductBrandAdmin(admin.ModelAdmin):
     list_display = ['id', 'ip']
+
+
+@admin.register(models.ProductGallery)
+class ProductGalleryAdmin(admin.ModelAdmin):
+    list_display = ['product']

@@ -297,8 +297,6 @@ _
 /site_module/migrations/0007_sitebanner_order.py,e\9\e987d92e2a4eb29dab189201b0888a90c7882eb3
 D
 site_module/admin.py,f\a\fafc5a82f082cfafc98451747ea370817f48de69
-k
-;product_module/templates/product_module/product_detail.html,1\8\186543d28dd45925bda36c4e03139b120f1809c1
 C
 utils/convertors.py,f\3\f32fc424b1395a776915cfbc550f1b45aeb223ba
 p

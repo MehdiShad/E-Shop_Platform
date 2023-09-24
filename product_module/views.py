@@ -4,8 +4,8 @@ from site_module.models import SiteBanner
 from django.views.generic.base import View
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
-from product_module.models import Product, ProductCategory, ProductBrand, ProductVisit
-
+from product_module.models import Product, ProductCategory, ProductBrand, ProductVisit, ProductGallery
+from utils.convertors import group_list
 # Create your views here.
 
 
@@ -124,6 +124,8 @@ class ProductDetailView(DetailView):
         context['is_favorite'] = favorite_product_id == str(loaded_prodct)
         context['banners'] = SiteBanner.objects.filter(is_active=True,
                                                        position__iexact=SiteBanner.SiteBannerPositions.product_detail)
+
+        context['product_galleries_group'] = group_list(custom_list=list(ProductGallery.objects.filter(product_id=loaded_prodct.id)), size=3)
 
         user_ip = get_client_id(request=self.request)
         user_id = None
