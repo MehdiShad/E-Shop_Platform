@@ -265,8 +265,6 @@ J
 user_panel_module/admin.py,5\d\5d00819d83a4ced10918e588b18d4087c17860be
 K
 user_panel_module/models.py,5\b\5be02278a51246da6507559376632ee4424b60a8
-E
-static/css/custom.css,0\d\0d25b77cab8c0daf281f3949aaf2d595654b92eb
 D
 home_module/admin.py,d\2\d20010f37acb2b52439cbce2351bda0e7bc4bf9e
 Y
@@ -325,7 +323,5 @@ M
 templates/shared/_layout.html,a\a\aa8416d81a2e7ab8c3856310c9cfc6c72d01ce28
 V
 &templates/shared/footer_refrences.html,7\6\761af9f0eb1b04983ed1f86ef27b8de5d6017d4f
-E
-order_module/views.py,f\9\f97602983d304fdf098250414c7ff8c6c6045c35
 F
 utils/email_service.py,9\5\95636ac958c42c038f71f191eab89152c78aea6d
