@@ -1,11 +1,12 @@
 from django.views import View
 from django.urls import reverse
-from django.http import HttpRequest
+from django.http import HttpRequest, JsonResponse
 from django.contrib.auth import logout
 from account_module.models import User
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
 from order_module.models import Order, OrderDetail
+from django.template.loader import render_to_string
 from .forms import EditProfileModelForm, ChangePasswordForm
 
 
@@ -72,13 +73,37 @@ def user_panel_menu_component(request: HttpRequest):
 
 
 def user_basket(request: HttpRequest):
+
     current_order, created = Order.objects.prefetch_related('orderdetail_set').get_or_create(is_paid=False, user_id=request.user.id)
-    total_cart_amount = 0
-    for order_detail in current_order.orderdetail_set.all():
-        total_cart_amount += order_detail.count * order_detail.product.price
+    total_cart_amount = current_order.calculate_total_price()
 
     context = {
         'order': current_order,
         'total_cart_amount': total_cart_amount,
     }
     return render(request, 'user_panel_module/user_basket.html', context=context)
+
+
+def remove_order_detail(request: HttpRequest):
+    detail_id = request.GET.get('detail_id')
+    if detail_id is None:
+        return JsonResponse({
+            'status': 'not_found_detail_id',
+        })
+    deleted_count, deleted_dict = OrderDetail.objects.filter(id=detail_id, order__is_paid=False, order__user_id=request.user.id).delete()
+
+    if deleted_count == 0:
+        return JsonResponse({
+            'status': 'detail_not_found'
+        })
+    current_order, created = Order.objects.prefetch_related('orderdetail_set').get_or_create(is_paid=False, user_id=request.user.id)
+
+    total_cart_amount = current_order.calculate_total_price()
+    context = {
+        'order': current_order,
+        'total_cart_amount': total_cart_amount,
+    }
+    return JsonResponse({
+        'status': 'success',
+        'body': render_to_string('user_panel_module/user_basket_content.html', context),
+    })

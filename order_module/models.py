@@ -11,6 +11,16 @@ class Order(models.Model):
     is_paid = models.BooleanField(verbose_name='نهایی شده/ نشده')
     payment_date = models.DateField(null=True, blank=True, verbose_name='تاریخ پرداخت')
 
+    def calculate_total_price(self):
+        total_cart_amount = 0
+        for order_detail in self.orderdetail_set.all():
+            if self.is_paid:
+                total_cart_amount += order_detail.count * order_detail.final_price
+            else:
+                total_cart_amount += order_detail.count * order_detail.product.price
+
+        return total_cart_amount
+
     def __str__(self):
         return str(self.user)
 
