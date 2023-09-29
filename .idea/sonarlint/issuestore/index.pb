@@ -193,8 +193,6 @@ C
 home_module/urls.py,4\5\4554a768acb59cb8a08bf454f1cb225ace8e5413
 C
 home_module/apps.py,e\e\ee5122677ca27fb6bc60dc5bc1488ccfb1e54923
-E
-home_module/models.py,5\8\5834719dabe555d960b2676a279f66ff63ed01d8
 D
 home_module/tests.py,d\1\d1a7170bef1d19f80f7207571c34ef02776538eb
 G
@@ -283,12 +281,8 @@ E
 0product_module/migrations/0007_productgallery.py,5\6\56783e9a4c3ae5b948810ceaaace1d7683b5f890
 V
 &templates/shared/header_refrences.html,6\b\6b52cce0bddd1f488baa9c569d3438b34f3bfb54
-E
-site_module/models.py,9\d\9da649f73e29dfadb4b26e7e2cc5a1a7079746de
 G
 product_module/admin.py,2\d\2d90b905037ce8973fe59b834e575c55f8212948
-H
-product_module/models.py,1\e\1efa14b72bd93e2dd43a8a3b47ddb098f49a8432
 D
 home_module/views.py,d\c\dce6f2fcd58e89e0a002a4162f5b4d0294ecf6a5
 a
@@ -307,8 +301,6 @@ H
 order_module/__init__.py,c\8\c8e1ab6d334dc4248dff34cd40b8913fb184bfa3
 S
 #order_module/migrations/__init__.py,c\d\cd375b697a3315aeb8650a26ddefb261fb8173f0
-B
-config/settings.py,7\6\769aa6664d3e5c284cbfb95fd9848a351a2e4e2b
 E
 order_module/admin.py,e\7\e7422b38ed8bdfd711e99f01751b61b7757a8fd7
 k
@@ -321,7 +313,21 @@ W
 config/urls.py,4\5\45b243d494ecd78f07818174452843086c64845d
 M
 templates/shared/_layout.html,a\a\aa8416d81a2e7ab8c3856310c9cfc6c72d01ce28
-V
-&templates/shared/footer_refrences.html,7\6\761af9f0eb1b04983ed1f86ef27b8de5d6017d4f
 F
 utils/email_service.py,9\5\95636ac958c42c038f71f191eab89152c78aea6d
+Q
+!polls/templatetags/poll_extras.py,6\c\6cea695adde2c77846376266438164558a9c736c
+[
++templates/shared/site_header_component.html,d\d\dd2c3efee56d64f64ff4846bf82da2464d40ede3
+C
+static/css/main.css,1\d\1d911fa3e8e9e880e642b3cfb08a49276784f29a
+F
+order_module/models.py,0\2\025253adc6f9c355bb3f16b5660085414a0b00fc
+n
+>user_panel_module/templates/user_panel_module/user_basket.html,0\6\06fe532572873cef657193d6271630a2e700fd8a
+E
+order_module/views.py,f\9\f97602983d304fdf098250414c7ff8c6c6045c35
+E
+static/css/custom.css,0\d\0d25b77cab8c0daf281f3949aaf2d595654b92eb
+I
+user_panel_module/urls.py,5\1\51f3219503e33bd72eb6cf5139abc4f7e2750ba7
