@@ -2,14 +2,14 @@ from django.views import View
 from django.urls import reverse
 from django.contrib.auth import logout
 from account_module.models import User
-from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
-from django.http import HttpRequest, JsonResponse
+from django.http import HttpRequest, JsonResponse, Http404
 from order_module.models import Order, OrderDetail
 from django.template.loader import render_to_string
+from django.utils.decorators import method_decorator
+from django.views.generic import TemplateView, ListView
 from django.contrib.auth.decorators import login_required
 from user_panel_module.forms import EditProfileModelForm, ChangePasswordForm
-from django.utils.decorators import method_decorator
 
 
 # Create your views here.
@@ -70,6 +70,18 @@ class ChangePasswordPage(View):
             'form': form,
         }
         return render(request, 'user_panel_module/change_password_page.html', context=context)
+
+
+@method_decorator(login_required, name='dispatch')
+class MyShopping(ListView):
+    model = Order
+    template_name = 'user_panel_module/user_shopping.html'
+
+    def get_queryset(self):
+        queryset = super(MyShopping, self).get_queryset()
+        request: HttpRequest = self.request
+        queryset = queryset.filter(user_id=request.user.id, is_paid=True)
+        return queryset
 
 
 @login_required
@@ -163,3 +175,13 @@ def change_order_detail_count(request: HttpRequest):
         'status': 'success',
         'body': render_to_string('user_panel_module/user_basket_content.html', context=context)
     })
+
+
+def my_shopping_detail(request: HttpRequest, order_id):
+    order = Order.objects.prefetch_related('orderdetail_set').filter(id=order_id, user_id=request.user.id).first()
+    if order is None:
+        raise Http404('سبد خرید مورد نظر یافت نشد')
+    context = {
+        'order': order,
+    }
+    return render(request, 'user_panel_module/user_shopping_detail.html', context=context)
