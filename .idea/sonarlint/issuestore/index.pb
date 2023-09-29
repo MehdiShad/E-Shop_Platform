@@ -151,8 +151,6 @@ o
 ?contact_module/templates/contact_module/profiles_list_page.html,a\3\a38c7c394cdbc5e5340d2a53196874cfc4ae7f7f
 „
 Tproduct_module/templates/product_module/components/product_categories_component.html,9\6\9637b3db84fe9b73a07dbbcee35f676c3d897162
-‡
-Wuser_panel_module/templates/user_panel_module/components/user_panel_menu_component.html,e\2\e2b27979c963506427c214ca01e333789d2ebd11
 ~
 Ncontact_module/migrations/0002_userprofile_alter_contactus_is_read_by_admin.py,1\5\15dd0f8efcd41e269f58bdb698639ddb9c849f8d
 U
@@ -323,5 +321,3 @@ n
 >user_panel_module/templates/user_panel_module/user_basket.html,0\6\06fe532572873cef657193d6271630a2e700fd8a
 E
 static/css/custom.css,0\d\0d25b77cab8c0daf281f3949aaf2d595654b92eb
-I
-user_panel_module/urls.py,5\1\51f3219503e33bd72eb6cf5139abc4f7e2750ba7
