@@ -171,8 +171,6 @@ h
 8product_module/migrations/0005_productbrand_url_title.py,3\e\3edbcdba6d9f65efbba7c7839fa9cc4640121172
 w
 Guser_panel_module/templates/user_panel_module/change_password_page.html,0\9\09852740457edad75130c75e32549c143f36e194
-@
-requirements.txt,1\9\19359a61ae2446b51b549167b014da2fcf265768
 9
 	manage.py,3\1\3156ad13e4d695cd526bbb7b031016ecba842270
 t
@@ -305,8 +303,6 @@ E
 order_module/admin.py,e\7\e7422b38ed8bdfd711e99f01751b61b7757a8fd7
 k
 ;product_module/templates/product_module/product_detail.html,1\8\186543d28dd45925bda36c4e03139b120f1809c1
-D
-order_module/urls.py,1\e\1ea2f76ccff00e2327100b9ab561c637f3d273ac
 W
 'order_module/migrations/0001_initial.py,6\f\6f16b2f840b21e93eaeaa13b4da0a69cd9d4260f
 >
@@ -325,8 +321,6 @@ F
 order_module/models.py,0\2\025253adc6f9c355bb3f16b5660085414a0b00fc
 n
 >user_panel_module/templates/user_panel_module/user_basket.html,0\6\06fe532572873cef657193d6271630a2e700fd8a
-E
-order_module/views.py,f\9\f97602983d304fdf098250414c7ff8c6c6045c35
 E
 static/css/custom.css,0\d\0d25b77cab8c0daf281f3949aaf2d595654b92eb
 I
