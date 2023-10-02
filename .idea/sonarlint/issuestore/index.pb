@@ -295,16 +295,12 @@ E
 order_module/admin.py,e\7\e7422b38ed8bdfd711e99f01751b61b7757a8fd7
 W
 'order_module/migrations/0001_initial.py,6\f\6f16b2f840b21e93eaeaa13b4da0a69cd9d4260f
->
-config/urls.py,4\5\45b243d494ecd78f07818174452843086c64845d
 M
 templates/shared/_layout.html,a\a\aa8416d81a2e7ab8c3856310c9cfc6c72d01ce28
 F
 utils/email_service.py,9\5\95636ac958c42c038f71f191eab89152c78aea6d
 Q
 !polls/templatetags/poll_extras.py,6\c\6cea695adde2c77846376266438164558a9c736c
-[
-+templates/shared/site_header_component.html,d\d\dd2c3efee56d64f64ff4846bf82da2464d40ede3
 C
 static/css/main.css,1\d\1d911fa3e8e9e880e642b3cfb08a49276784f29a
 n
