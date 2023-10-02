@@ -335,7 +335,5 @@ w
 Guser_panel_module/templates/user_panel_module/user_shopping_detail.html,5\5\55c638a061dbcab2f29f61f421ebd3bd794e779e
 v
 Fuser_panel_module/templates/user_panel_module/user_basket_content.html,1\5\15be90f534534eb21390918479fc289825f9b83d
-B
-config/settings.py,7\6\769aa6664d3e5c284cbfb95fd9848a351a2e4e2b
 J
 user_panel_module/views.py,4\4\4415fd54e8bd5c92f4d750c747ce92c2f1560b5d
