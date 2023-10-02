@@ -1,8 +1,8 @@
-from django.db.models import Count
 from django.shortcuts import render
 from utils.convertors import group_list
-from product_module.models import Product, ProductCategory
+from django.db.models import Count, Sum
 from django.views.generic.base import TemplateView
+from product_module.models import Product, ProductCategory
 from site_module.models import SiteSetting, FooterLinkBox, Slider
 
 
@@ -29,12 +29,16 @@ class HomeView(TemplateView):
         context['sliders'] = Slider.objects.filter(is_active=True)
 
         latest_products = Product.objects.filter(is_active=True, is_delete=False).order_by('-id')[:12]
-        most_visit_products = Product.objects.filter(is_active=True, is_delete=False).annotate(visit_count=Count('productvisit')).order_by('-visit_count')[:12 ]
+        most_visit_products = Product.objects.filter(is_active=True, is_delete=False).annotate(
+            visit_count=Count('productvisit')).order_by('-visit_count')[:12]
 
         context['latest_products'] = group_list(custom_list=latest_products, size=4)
         context['most_visit_products'] = group_list(custom_list=most_visit_products, size=4)
 
-        categories = list(ProductCategory.objects.annotate(product_count=Count('product_categories')).filter(is_active=True, is_delete=False, product_count__gt=0))
+        categories = list(
+            ProductCategory.objects.annotate(product_count=Count('product_categories')).filter(is_active=True,
+                                                                                               is_delete=False,
+                                                                                               product_count__gt=0))
         categories_products = []
         for category in categories:
             item = {
@@ -45,6 +49,10 @@ class HomeView(TemplateView):
             categories_products.append(item)
 
         context['categories_products'] = categories_products
+        most_bought_products = Product.objects.filter(orderdetail__order__is_paid=True).annotate(
+            order_count=Sum('orderdetail__count')).order_by('-order_count')[:12]
+
+        context['most_bought_products'] = group_list(custom_list=most_bought_products, size=4)
 
         return context
 
