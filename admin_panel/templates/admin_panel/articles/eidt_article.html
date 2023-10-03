@@ -1,0 +1,31 @@
+{% extends 'admin_panel/shared/_admin_layout.html' %}
+{% load widget_tweaks %}
+
+
+{% block title %}ویرایش مقاله{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{% url 'admin_edit_article' pk=article.id %}">
+                {% csrf_token %}
+{#                {{ form.as_p }}#}
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="id_{{ field.name }}">{{ field.label }}</label>
+                {% render_field field class='form-control is-invalid' %}
+                </div>
+                <div>
+                    <ul>
+                        {% for error in field.error %}
+                            <li class="text-danger">{{ error }}</li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            {% endfor %}
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

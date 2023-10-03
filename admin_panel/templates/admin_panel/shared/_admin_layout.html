@@ -424,10 +424,27 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
             <ul class="nav sidebar-menu">
                 <!--Dashboard-->
                 <li>
-                    <a href="index.html">
+                    <a href="{% url 'admin_dashboard' %}">
                         <i class="menu-icon glyphicon glyphicon-home"></i>
                         <span class="menu-text"> داشبورد </span>
                     </a>
+                </li>
+                <!--UI Elements-->
+                <li>
+                    <a href="#" class="menu-dropdown">
+                        <i class="menu-icon fa fa-desktop"></i>
+                        <span class="menu-text"> مدیریت مقالات </span>
+
+                        <i class="menu-expand"></i>
+                    </a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="{% url 'admin_articles' %}">
+                                <span class="menu-text">لیست مقالات</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <!--Databoxes-->
                 <li>
